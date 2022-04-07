@@ -3,6 +3,7 @@ package pl.migibud.testing;
 public class Account {
 
     private boolean active;
+    private Address defaultDeliveryAddress;
 
     public Account(){
         this.active=false;
@@ -16,4 +17,11 @@ public class Account {
         return this.active;
     }
 
+    public Address getDefaultDeliveryAddress() {
+        return defaultDeliveryAddress;
+    }
+
+    public void setDefaultDeliveryAddress(Address defaultDeliveryAddress) {
+        this.defaultDeliveryAddress = defaultDeliveryAddress;
+    }
 }
