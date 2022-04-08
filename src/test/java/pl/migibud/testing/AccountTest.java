@@ -2,7 +2,10 @@ package pl.migibud.testing;
 
 import org.junit.jupiter.api.Test;
 
+//import static org.hamcrest.MatcherAssert.assertThat;
+//import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
+
 
 class AccountTest {
 
@@ -13,6 +16,9 @@ class AccountTest {
         Account newAccount = new Account();
         //then
         assertFalse(newAccount.isActive(), "Check if new account is not active");
+        //assertThat(newAccount.isActive(),equalTo(false));
+        //assertThat(newAccount.isActive(),is(false));
+        //assertThat(newAccount.isActive()).isFalse();
     }
 
     @Test
@@ -23,6 +29,8 @@ class AccountTest {
         newAccount.activate();
         //then
         assertTrue(newAccount.isActive());
+        //assertThat(newAccount.isActive(),equalTo(true));
+        //assertThat(newAccount.isActive()).isTrue();
     }
 
     @Test
@@ -35,6 +43,7 @@ class AccountTest {
 
         //then
         assertNull(address);
+        //assertThat(address,nullValue());
     }
 
 
@@ -49,7 +58,9 @@ class AccountTest {
         Address address1 = account.getDefaultDeliveryAddress();
 
         //then
-        assertNotNull(address1);
+        //assertNotNull(address1);
+        //assertThat(address1,is(notNullValue()));
+        //assertThat(address1).isNotNull();
     }
 
 }
