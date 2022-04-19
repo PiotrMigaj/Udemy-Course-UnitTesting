@@ -1,6 +1,7 @@
 package pl.migibud.testing;
 
 import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.function.Executable;
@@ -124,6 +125,7 @@ class MealTest {
         return price*quantity;
     }
 
+    @Tag("fries")
     @TestFactory
     Collection<DynamicTest> calculateMealPrices(){
 

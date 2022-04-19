@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 //import static org.hamcrest.MatcherAssert.assertThat;
 //import static org.hamcrest.Matchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
@@ -79,6 +81,24 @@ class AccountTest {
             assertTrue(account.isActive());
         });
 
+    }
+
+    @Test
+    void invalidEmailShouldThrowException(){
+        //given
+        Account account = new Account();
+        //when
+        //then
+        assertThrows(IllegalArgumentException.class,()->account.setEmail("wrongEmail"));
+    }
+    @Test
+    void validEmailShouldBeSet(){
+        //given
+        Account account = new Account();
+        //when
+        account.setEmail("pmigaj@gmail.com");
+        //then
+        assertThat(account.getEmail(),is("pmigaj@gmail.com"));
     }
 
 }

@@ -23,6 +23,10 @@ public class Order {
         this.meals.clear();
     }
 
+//    int totalPrice(){
+//        this.meals.stream().mapToInt(meal ->meal.getPrice().sum());
+//    }
+
     @Override
     public String toString() {
         return "Order{" +

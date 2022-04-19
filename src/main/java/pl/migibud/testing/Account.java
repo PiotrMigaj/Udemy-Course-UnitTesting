@@ -4,6 +4,19 @@ public class Account {
 
     private boolean active;
     private Address defaultDeliveryAddress;
+    private String email;
+
+    public void setEmail(String email) {
+        if(email.matches("[\\D]+@[\\D]+\\.[\\D]+")){
+            this.email = email;
+        }else{
+            throw new IllegalArgumentException("Wrong email format");
+        }
+    }
+
+    public String getEmail() {
+        return email;
+    }
 
     public Account(){
         this.active=false;
